@@ -12,8 +12,8 @@ public class GradeConverter {
     public static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        double type;         
-
+        //No need for this to be a double
+        int type;
 	do
 	{
 	    System.out.println("MAIN MENU");
@@ -24,8 +24,8 @@ public class GradeConverter {
 	    System.out.println("Please enter your selection: ");
 	    type=sc.nextInt();
             //if statement was wrong
-	    if (type==1) percentageToLevel();
-	    if (type==2) percentageToAlpha();
+	    if (type==1) percentageToLevel();//They were in the wrong order
+	    if (type==2) percentageToAlpha();//1 was running alpha and 2 was running level
             //option 3 did nothing
             if (type==3) System.exit(0);
 	}
@@ -35,10 +35,11 @@ public class GradeConverter {
     // Conversion function percentage to Alpha
     public static void percentageToAlpha ()
     {
-	double grade;  
+        //This also doesnt need to be a double
+	int grade;  
 	String alphaGrade;
 	String messageOut;
-
+        
 	System.out.println("Please enter the numeric grade: "); 
 	grade=sc.nextInt();
         //Wrong > was used
@@ -93,7 +94,8 @@ public class GradeConverter {
     public static void percentageToLevel ()
 
     {
-	int grade=0;
+        //No need to assign a value to this int
+	int grade;
 	String levelGrade="";
 	String messageOut;
 
@@ -145,5 +147,5 @@ public class GradeConverter {
 	messageOut=(grade + "% = " + levelGrade);  
 	System.out.println(messageOut);
     }
-
+    
 }
